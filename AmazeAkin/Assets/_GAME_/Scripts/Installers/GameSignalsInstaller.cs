@@ -7,6 +7,8 @@ namespace Amaze.Installer
         public override void InstallBindings()
         {
             SignalBusInstaller.Install(Container);
+
+            Container.DeclareSignal<LevelInitializedSignal>().OptionalSubscriber();
         }
     }
 }

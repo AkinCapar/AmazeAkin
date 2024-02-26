@@ -9,6 +9,7 @@ namespace Amaze.Settings
     [CreateAssetMenu(fileName = nameof(LevelSettings), menuName = Constants.MenuNames.SETTINGS + nameof(LevelSettings))]
     public class LevelSettings : ScriptableObject
     {
+        public float inputSensitivity;
         public List<LevelData> levels;
     }
 }

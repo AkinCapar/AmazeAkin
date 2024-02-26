@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Amaze.Controllers;
 using Amaze.Models;
 using Amaze.Settings;
+using Amaze.Views;
 using DreamBlast.Controllers;
 using UnityEngine;
 using Zenject;
@@ -30,9 +31,11 @@ namespace Amaze.Installer
             //CONTROLLERS
             Container.BindInterfacesAndSelfTo<GameController>().AsSingle();
             Container.Bind<LevelController>().AsSingle();
+            Container.BindInterfacesTo<InputController>().AsSingle();
             
             //FACTORIES
             Container.BindFactory<Object, LevelView, LevelView.Factory>().FromFactory<PrefabFactory<LevelView>>();
+            Container.BindFactory<Object, BallView, BallView.Factory>().FromFactory<PrefabFactory<BallView>>();
         }
         
         /*private void InstallBubbles()
