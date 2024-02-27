@@ -12,5 +12,9 @@ namespace Amaze.Utilities
             public const string INSTALLERS = ParentMenuName + "Installers/";
             public const string SETTINGS = ParentMenuName + "Settings/";
         }
+        public struct Tags
+        {
+            public const string BorderTag = "Border";
+        }
     }
 }

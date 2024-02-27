@@ -9,9 +9,16 @@ namespace Amaze.Utilities
         WaitingToStart,
         Playing
     }
-
     public enum ScreenStates
     {
         GameplayState
+    }
+
+    public enum InputDirections
+    {
+        Up,
+        Down,
+        Right,
+        Left
     }
 }

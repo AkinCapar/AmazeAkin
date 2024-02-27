@@ -1,3 +1,4 @@
+using Amaze.Utilities;
 using UnityEngine;
 
 namespace Amaze
@@ -9,6 +10,15 @@ namespace Amaze
         public LevelInitializedSignal(Transform startPos)
         {
             StartPosition = startPos;
+        }
+    }
+
+    public readonly struct InputReceivedSignal
+    {
+        public readonly InputDirections Direction;
+        public InputReceivedSignal(InputDirections direction)
+        {
+            Direction = direction;
         }
     }
 }

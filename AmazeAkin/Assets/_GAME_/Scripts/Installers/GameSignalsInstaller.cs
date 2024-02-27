@@ -9,6 +9,7 @@ namespace Amaze.Installer
             SignalBusInstaller.Install(Container);
 
             Container.DeclareSignal<LevelInitializedSignal>().OptionalSubscriber();
+            Container.DeclareSignal<InputReceivedSignal>().OptionalSubscriber();
         }
     }
 }
