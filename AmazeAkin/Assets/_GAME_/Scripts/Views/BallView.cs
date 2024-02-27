@@ -67,32 +67,32 @@ namespace Amaze.Views
                     destination = CalculateDestination(Vector3.up);
                     if ((destination - transform.position).magnitude > 1)
                     {
-                        Debug.Log("hmm: " + (destination - transform.position).magnitude);
-                        transform.position = destination - Vector3.up;
+                        int moveAmount = Mathf.RoundToInt((destination - transform.position).magnitude);
+                        transform.localPosition -= (moveAmount - 1) * Vector3.forward;
                     }
                     break;
                 case InputDirections.Down:
                     destination = CalculateDestination(-Vector3.up);
                     if ((destination - transform.position).magnitude > 1)
                     {
-                        Debug.Log("hmm: " + (destination - transform.position).magnitude);
-                        transform.position = destination + Vector3.up;
+                        int moveAmount = Mathf.RoundToInt((destination - transform.position).magnitude);
+                        transform.localPosition += (moveAmount - 1) * Vector3.forward;
                     }
                     break;
                 case InputDirections.Right:
                     destination = CalculateDestination(Vector3.right);
                     if ((destination - transform.position).magnitude > 1)
                     {
-                        Debug.Log("hmm: " + (destination - transform.position).magnitude);
-                        transform.position = destination - Vector3.right;
+                        int moveAmount = Mathf.RoundToInt((destination - transform.position).magnitude);
+                        transform.localPosition += (moveAmount - 1) * Vector3.right;
                     }
                     break;
                 case InputDirections.Left:
                     destination = CalculateDestination(-Vector3.right);
                     if ((destination - transform.position).magnitude > 1)
                     {
-                        Debug.Log("hmm: " + (destination - transform.position).magnitude);
-                        transform.position = destination + Vector3.right;
+                        int moveAmount = Mathf.RoundToInt((destination - transform.position).magnitude);
+                        transform.localPosition -= (moveAmount - 1) * Vector3.right;
                     }
                     break;
             }

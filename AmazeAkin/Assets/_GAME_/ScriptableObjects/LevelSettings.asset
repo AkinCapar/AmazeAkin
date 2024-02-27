@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fad034a4fcca4225b2c333d06c4a6bd, type: 3}
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
+  inputSensitivity: 500
   levels:
   - LevelPrefab: {fileID: 1399612944971584838, guid: b79fa12296e6843a49f3fa2644bf7a59, type: 3}

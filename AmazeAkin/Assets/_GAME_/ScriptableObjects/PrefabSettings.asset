@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a2c17241f444f5286aa255d6ee8abc, type: 3}
   m_Name: PrefabSettings
   m_EditorClassIdentifier: 
+  ballView: {fileID: 2477020630257201401, guid: 4e6ac6defdf8043c98eed1fe5955e862, type: 3}
