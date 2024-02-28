@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
   inputSensitivity: 500
-  ballMoveSpeed: 8
+  ballMoveSpeed: 16
   levels:
+  - LevelPrefab: {fileID: 1399612944971584838, guid: b79fa12296e6843a49f3fa2644bf7a59, type: 3}
   - LevelPrefab: {fileID: 4356003990377483021, guid: 7f6dffa1f56a149699980b30c648d579, type: 3}
+  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
+  - LevelPrefab: {fileID: 1357517219878642023, guid: b8183af5ce7ff473582ed6b2b4622001, type: 3}
+  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
+  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
+  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
+  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
+  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
+  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
