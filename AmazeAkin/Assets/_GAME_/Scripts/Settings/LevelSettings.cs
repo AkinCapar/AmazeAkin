@@ -10,6 +10,7 @@ namespace Amaze.Settings
     public class LevelSettings : ScriptableObject
     {
         public float inputSensitivity;
+        public float ballMoveSpeed;
         public List<LevelData> levels;
     }
 }

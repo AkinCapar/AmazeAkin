@@ -9,6 +9,7 @@ namespace Amaze.Views
     public class LevelView : MonoBehaviour
     {
         [SerializeField] private Transform startPosition;
+        [SerializeField] private List<PathTileView> _pathTiles;
 
         #region Injection
 
@@ -24,7 +25,7 @@ namespace Amaze.Views
 
         public void Initialize()
         {
-            _signalBus.Fire(new LevelInitializedSignal(startPosition));
+            _signalBus.Fire(new LevelInitializedSignal(startPosition, _pathTiles));
         }
 
         public class Factory : PlaceholderFactory<Object, LevelView>

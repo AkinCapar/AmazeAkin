@@ -13,6 +13,7 @@ namespace Amaze.Controllers
     {
         private BallView _ballView;
         private LevelView _levelView;
+        private List<PathTileView> _tilesToBeCompleted;
         
         #region Injection
 
@@ -63,8 +64,23 @@ namespace Amaze.Controllers
 
         private void OnLevelInitializedSignal(LevelInitializedSignal signal)
         {
+            _tilesToBeCompleted = signal.PathTileViews;
             _ballView = _ballViewFactory.Create(_prefabSettings.ballView);
             _ballView.Initialize(signal.StartPosition);
+        }
+
+        public void ManagePaintedTile(PathTileView tile)
+        {
+            if (_tilesToBeCompleted.Contains(tile))
+            { 
+                _tilesToBeCompleted.Remove(tile);
+            }
+
+            if (_tilesToBeCompleted.Count < 1)
+            {
+                Debug.Log("LEVEL COMPLETED!");
+                _signalBus.Fire<PathTilesCompletedSignal>();
+            }
         }
 
         public void Dispose()

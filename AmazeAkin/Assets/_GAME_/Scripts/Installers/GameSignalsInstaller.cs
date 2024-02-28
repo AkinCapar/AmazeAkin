@@ -10,6 +10,7 @@ namespace Amaze.Installer
 
             Container.DeclareSignal<LevelInitializedSignal>().OptionalSubscriber();
             Container.DeclareSignal<InputReceivedSignal>().OptionalSubscriber();
+            Container.DeclareSignal<PathTilesCompletedSignal>().OptionalSubscriber();
         }
     }
 }

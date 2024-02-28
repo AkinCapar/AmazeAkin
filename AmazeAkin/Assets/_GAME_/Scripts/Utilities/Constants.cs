@@ -15,6 +15,7 @@ namespace Amaze.Utilities
         public struct Tags
         {
             public const string BorderTag = "Border";
+            public const string Ball = "Ball";
         }
     }
 }
