@@ -56,8 +56,9 @@ namespace Amaze.Controllers
         }
 
 
-        private void CompleteLevel()
+        public void CompleteLevel()
         {
+            _levelView.DestroyLevelView();
             _levelModel.IncreaseCurrentLevel(1);
             CreateLevel();
         }
@@ -65,8 +66,17 @@ namespace Amaze.Controllers
         private void OnLevelInitializedSignal(LevelInitializedSignal signal)
         {
             _tilesToBeCompleted = signal.PathTileViews;
-            _ballView = _ballViewFactory.Create(_prefabSettings.ballView);
-            _ballView.Initialize(signal.StartPosition);
+            
+            if (_ballView == null)
+            {
+                _ballView = _ballViewFactory.Create(_prefabSettings.ballView);
+                _ballView.Initialize(signal.StartPosition);
+            }
+
+            else
+            {
+                _ballView.NewLevelAnimation(signal.StartPosition);
+            }
         }
 
         public void ManagePaintedTile(PathTileView tile)

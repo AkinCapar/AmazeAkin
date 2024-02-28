@@ -12,6 +12,7 @@ namespace Amaze.Views
     public class BallView : MonoBehaviour
     {
         private bool _ballIsMoving;
+        private bool _pathIsCompleted;
         
         #region Injection
 
@@ -34,6 +35,7 @@ namespace Amaze.Views
         public void Initialize(Transform startPos)
         {
             _signalBus.Subscribe<InputReceivedSignal>(OnInputRecievedSignal);
+            _signalBus.Subscribe<PathTilesCompletedSignal>(OnPathTilesCompletedSignal);
 
             gameObject.transform.position = startPos.position;
             gameObject.transform.parent = startPos;
@@ -68,6 +70,11 @@ namespace Amaze.Views
             }
             
             return transform.position;
+        }
+
+        private void OnPathTilesCompletedSignal()
+        {
+            _pathIsCompleted = true;
         }
 
         private void CalculateAndMove(InputDirections direction)
@@ -113,10 +120,47 @@ namespace Amaze.Views
             int moveAmount = Mathf.RoundToInt((destination - transform.position).magnitude);
             Vector3 finalDestination = transform.localPosition + (moveAmount - 1) * direction;
             transform.DOLocalMove(finalDestination, moveAmount / _levelSettings.ballMoveSpeed)
-                .OnComplete(() => { _ballIsMoving = false;});
+                .OnComplete(() =>
+                {
+                    _ballIsMoving = false;
+                    LevelCompletedAnimation();
+                });
         }
 
-        public void Dispose() //TODO Level fail olduğunda dispose etmeyi unutma.
+        private void LevelCompletedAnimation()
+        {
+            if (_pathIsCompleted)
+            {
+                _ballIsMoving = true;
+                transform.parent = null;
+                transform.DOMove(new Vector3(0, 0, - 5), 1.5f)
+                    .OnComplete(() =>
+                {
+                    transform.DOMoveZ(-9.2f, 1f).OnComplete((() =>
+                    {
+                        _levelController.CompleteLevel();
+                    }));
+                });
+            }
+        }
+
+        public void NewLevelAnimation(Transform startPos)
+        {
+            transform.DOMoveZ(-5, 1f)
+                .OnComplete((() =>
+                {
+                    gameObject.transform.DOMove(startPos.position, 1.5f)
+                        .OnComplete(() =>
+                        {
+                            _ballIsMoving = false;
+                            _pathIsCompleted = false;
+                        });
+                    gameObject.transform.parent = startPos;
+                    gameObject.transform.localEulerAngles = new Vector3(-90, 0, 0);
+                }));
+        }
+
+        public void Dispose() 
         {
             _signalBus.Unsubscribe<InputReceivedSignal>(OnInputRecievedSignal);
         }

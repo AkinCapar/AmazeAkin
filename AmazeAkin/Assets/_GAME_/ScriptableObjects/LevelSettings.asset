@@ -15,4 +15,4 @@ MonoBehaviour:
   inputSensitivity: 500
   ballMoveSpeed: 8
   levels:
-  - LevelPrefab: {fileID: 1399612944971584838, guid: b79fa12296e6843a49f3fa2644bf7a59, type: 3}
+  - LevelPrefab: {fileID: 4356003990377483021, guid: 7f6dffa1f56a149699980b30c648d579, type: 3}

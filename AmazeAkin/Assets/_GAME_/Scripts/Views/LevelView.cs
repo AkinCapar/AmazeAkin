@@ -28,6 +28,10 @@ namespace Amaze.Views
             _signalBus.Fire(new LevelInitializedSignal(startPosition, _pathTiles));
         }
 
+        public void DestroyLevelView()
+        {
+            Destroy(gameObject);
+        }
         public class Factory : PlaceholderFactory<Object, LevelView>
         {
         }
