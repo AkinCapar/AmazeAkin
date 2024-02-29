@@ -11,6 +11,8 @@ namespace Amaze.Settings
     {
         public float inputSensitivity;
         public float ballMoveSpeed;
+        public float pathTileJumpPower;
+        public float pathTileJumpSpeed;
         public List<LevelData> levels;
     }
 }

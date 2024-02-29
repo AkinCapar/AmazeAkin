@@ -133,10 +133,10 @@ namespace Amaze.Views
             {
                 _ballIsMoving = true;
                 transform.parent = null;
-                transform.DOMove(new Vector3(0, 0, - 5), 1.5f)
+                transform.DOMove(new Vector3(0, 0, - 5), 1f)
                     .OnComplete(() =>
                 {
-                    transform.DOMoveZ(-9.2f, 1f).OnComplete((() =>
+                    transform.DOMoveZ(-9.2f, .5f).OnComplete((() =>
                     {
                         _levelController.CompleteLevel();
                     }));
@@ -146,10 +146,10 @@ namespace Amaze.Views
 
         public void NewLevelAnimation(Transform startPos)
         {
-            transform.DOMoveZ(-5, 1f)
+            transform.DOMoveZ(-5, .5f)
                 .OnComplete((() =>
                 {
-                    gameObject.transform.DOMove(startPos.position, 1.5f)
+                    gameObject.transform.DOMove(startPos.position, 1f)
                         .OnComplete(() =>
                         {
                             _ballIsMoving = false;

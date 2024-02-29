@@ -14,19 +14,20 @@ namespace Amaze.Views
     public class PathTileView : MonoBehaviour
     {
         private MeshRenderer _meshRenderer;
-        [SerializeField] private float _jumpPower;
-        [SerializeField] private float _jumpSpeed;
         private bool _isJumped;
         private bool _isPainted;
         
         #region Injection
 
         private LevelController _levelController;
+        private LevelSettings _levelSettings;
 
         [Inject]
-        private void Construct(LevelController levelController)
+        private void Construct(LevelController levelController,
+            LevelSettings levelSettings)
         {
             _levelController = levelController;
+            _levelSettings = levelSettings;
         }
 
         #endregion
@@ -42,7 +43,7 @@ namespace Amaze.Views
             {
                 _isJumped = true;
                 Vector3 position = transform.localPosition;
-                gameObject.transform.DOLocalJump(position, _jumpPower, 1, _jumpSpeed);
+                gameObject.transform.DOLocalJump(position, _levelSettings.pathTileJumpPower, 1, _levelSettings.pathTileJumpSpeed);
             }
         }
 
@@ -52,7 +53,7 @@ namespace Amaze.Views
             {
                 _isPainted = true;
                 _levelController.ManagePaintedTile(this);
-                _meshRenderer.material.DOColor(Color.magenta, _jumpSpeed);
+                _meshRenderer.material.DOColor(Color.magenta, _levelSettings.pathTileJumpSpeed);
             }
         }
     }

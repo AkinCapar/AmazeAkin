@@ -14,14 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputSensitivity: 500
   ballMoveSpeed: 16
+  pathTileJumpPower: 4
+  pathTileJumpSpeed: 0.5
   levels:
   - LevelPrefab: {fileID: 1399612944971584838, guid: b79fa12296e6843a49f3fa2644bf7a59, type: 3}
   - LevelPrefab: {fileID: 4356003990377483021, guid: 7f6dffa1f56a149699980b30c648d579, type: 3}
   - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
   - LevelPrefab: {fileID: 1357517219878642023, guid: b8183af5ce7ff473582ed6b2b4622001, type: 3}
-  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
-  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
-  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
-  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
-  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
-  - LevelPrefab: {fileID: 3868423620515185926, guid: 8eb30166307084cd59a3f001afd987ee, type: 3}
+  - LevelPrefab: {fileID: 8517662548958079213, guid: 426b34b42d5af4b95b8b5a3fc689ed8a, type: 3}
+  - LevelPrefab: {fileID: 7749492458541276729, guid: 0f76492468b3a40bab91d366694c1785, type: 3}
+  - LevelPrefab: {fileID: 6328878446938800090, guid: 97559f927041e407e9f32be0e1034dad, type: 3}
+  - LevelPrefab: {fileID: 1590019224373301227, guid: a40a49182c921460695115db968d1e69, type: 3}
+  - LevelPrefab: {fileID: 6354897001542008065, guid: e6fe44412f28a432e850e151ecba6ce9, type: 3}
+  - LevelPrefab: {fileID: 8445812181794298840, guid: 7a4f9d4720ce84e2eabb2c8551ddd166, type: 3}
