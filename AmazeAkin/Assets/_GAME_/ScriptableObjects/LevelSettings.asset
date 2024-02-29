@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fad034a4fcca4225b2c333d06c4a6bd, type: 3}
   m_Name: LevelSettings
   m_EditorClassIdentifier: 
-  inputSensitivity: 500
+  inputSensitivity: 300
   ballMoveSpeed: 16
   pathTileJumpPower: 4
   pathTileJumpSpeed: 0.5

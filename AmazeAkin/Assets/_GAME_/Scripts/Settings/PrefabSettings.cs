@@ -10,5 +10,6 @@ namespace Amaze.Settings
     public class PrefabSettings : ScriptableObject
     {
         public BallView ballView;
+        public ParticleSystem confettiFX;
     }
 }

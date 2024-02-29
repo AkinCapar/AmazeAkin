@@ -23,13 +23,15 @@ namespace Amaze.Controllers
         private SignalBus _signalBus;
         private LevelView.Factory _levelViewFactory;
         private BallView.Factory _ballViewFactory;
+        private ParticleSystem _confettiVFX;
 
         public LevelController(PrefabSettings prefabSettings
             , LevelSettings levelSettings
             , SignalBus signalBus
             , LevelModel levelModel
             , LevelView.Factory levelViewFactory
-            , BallView.Factory ballViewFactory)
+            , BallView.Factory ballViewFactory
+            , [Inject(Id = "confettiVFX")] ParticleSystem confettiVFX)
         {
             _prefabSettings = prefabSettings;
             _levelSettings = levelSettings;
@@ -37,6 +39,7 @@ namespace Amaze.Controllers
             _levelModel = levelModel;
             _levelViewFactory = levelViewFactory;
             _ballViewFactory = ballViewFactory;
+            _confettiVFX = confettiVFX;
         }
 
         #endregion
@@ -88,7 +91,7 @@ namespace Amaze.Controllers
 
             if (_tilesToBeCompleted.Count < 1)
             {
-                Debug.Log("LEVEL COMPLETED!");
+                _confettiVFX.Play();
                 _signalBus.Fire<PathTilesCompletedSignal>();
             }
         }
