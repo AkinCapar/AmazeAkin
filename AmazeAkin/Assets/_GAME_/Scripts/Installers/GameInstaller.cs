@@ -4,7 +4,7 @@ using Amaze.Controllers;
 using Amaze.Models;
 using Amaze.Settings;
 using Amaze.Views;
-using DreamBlast.Controllers;
+using Amaze.Controllers;
 using UnityEngine;
 using Zenject;
 

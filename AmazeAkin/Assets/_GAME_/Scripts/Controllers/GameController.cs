@@ -6,7 +6,7 @@ using Amaze.Utilities;
 using UnityEngine;
 using Zenject;
 
-namespace DreamBlast.Controllers
+namespace Amaze.Controllers
 {
     public class GameController : IInitializable, ITickable, IDisposable
     {
